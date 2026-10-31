@@ -9,16 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: logronoide/atarist-toolkit-docker:latest
+      image: ghcr.io/mikrosk/m68k-atari-mint-gcc:latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Show compiler
-        run: |
-          which m68k-atari-mint-gcc
-          m68k-atari-mint-gcc --version
 
       - name: Build CFGEDIT.PRG
         run: make
